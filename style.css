@@ -1,0 +1,304 @@
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-yellow: #FFD166;
+            --secondary-blue: #118AB2;
+            --accent-red: #EF476F;
+            --dark-blue: #073B4C;
+            --light-gray: #F8F9FA;
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--dark-blue);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0 var(--primary-yellow);
+            position: relative;
+            display: inline-block;
+        }
+
+        h1:after {
+            content: "😂";
+            position: absolute;
+            top: -10px;
+            right: -40px;
+            font-size: 2.5rem;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: var(--secondary-blue);
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .emoji-container {
+            font-size: 2rem;
+            margin-top: 10px;
+            height: 40px;
+        }
+
+        .emoji {
+            display: inline-block;
+            opacity: 0;
+            animation: pop-in 0.5s forwards;
+        }
+
+        @keyframes pop-in {
+            0% { transform: scale(0); opacity: 0; }
+            80% { transform: scale(1.2); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .joke-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            border: 5px solid var(--primary-yellow);
+            transition: all 0.3s ease;
+        }
+
+        .joke-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .joke-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary-yellow), var(--secondary-blue), var(--accent-red));
+        }
+
+        .joke-content {
+            font-size: 1.8rem;
+            line-height: 1.5;
+            color: var(--dark-blue);
+            text-align: center;
+            margin-bottom: 30px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .fade-out {
+            opacity: 0;
+        }
+
+        .fade-in {
+            opacity: 1;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-width: 200px;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0d7a9c;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background-color: var(--primary-yellow);
+            color: var(--dark-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: #ffc233;
+            transform: scale(1.05);
+        }
+
+        .btn-danger {
+            background-color: var(--accent-red);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #e62e5c;
+            transform: scale(1.05);
+        }
+
+        .btn-twitter {
+            background-color: #1DA1F2;
+            color: white;
+        }
+
+        .btn-twitter:hover {
+            background-color: #0d8bd9;
+            transform: scale(1.05);
+        }
+
+        .loading {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--secondary-blue);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transform: translateX(150%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--dark-blue);
+            font-size: 0.9rem;
+            padding: 20px;
+            opacity: 0.8;
+        }
+
+        .joke-counter {
+            font-size: 1rem;
+            background-color: var(--light-gray);
+            padding: 8px 15px;
+            border-radius: 50px;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h1:after {
+                font-size: 2rem;
+                right: -30px;
+                top: -5px;
+            }
+
+            .joke-card {
+                padding: 30px 20px;
+            }
+
+            .joke-content {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                min-width: 150px;
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h1:after {
+                font-size: 1.5rem;
+                right: -25px;
+            }
+
+            .joke-content {
+                font-size: 1.3rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }

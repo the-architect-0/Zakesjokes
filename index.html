@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Dad Joke Vault</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Captain Zakes' Joke Vault</h1>
+            <p class="tagline"></p>
+            <div class="emoji-container" id="emojiContainer"></div>
+        </header>
+
+        <main>
+            <div class="joke-card">
+                <div class="joke-content fade-in" id="jokeContent">
+                    Click the button below to get your first dad joke!
+                </div>
+                
+                <div class="controls">
+                    <button class="btn btn-primary" id="getJokeBtn">
+                        <i class="fas fa-laugh-beam"></i> Get New Joke
+                    </button>
+                    
+                    <button class="btn btn-secondary" id="copyBtn">
+                        <i class="far fa-copy"></i> Copy to Clipboard
+                    </button>
+                    
+                    <button class="btn btn-twitter" id="tweetBtn">
+                        <i class="fab fa-twitter"></i> Share on Twitter
+                    </button>
+                </div>
+            </div>
+            
+            <div class="joke-counter">
+                <span id="jokeCount">0</span> dad jokes served so far
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by the icanhazdadjoke.com API </p>
+            <p>2026</p>
+        </footer>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <script src="main.js">
+        
+        
+    </script>
+</body>
+</html
